@@ -14,10 +14,13 @@ public class ChangePasswordExecutions extends ChangePasswordActions {
 	@Test
 	public void Signin() throws Exception
 	{
-	Thread.sleep(5000);
-	BrowserCode.Browser();
+/*	Thread.sleep(5000);
+	BrowserCode.Browser();*/
 	ChangePasswordExecutions obj = new ChangePasswordExecutions();
 	obj.password("C:\\Users\\cubic\\git\\BOOKSTORE_TASK12\\BookStore\\External Files\\Book1.xlsx", "Sheet2");
 	
 	}
 }
+
+
+

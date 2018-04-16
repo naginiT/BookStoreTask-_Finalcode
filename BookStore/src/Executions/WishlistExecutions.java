@@ -14,8 +14,8 @@ import Objects.BrowserCode;
 public class WishlistExecutions {
 	@Test
 	public void indexEx() throws Exception {
-		//Thread.sleep(5000);
-		//BrowserCode.Browser();
-		WishlistActions.wish();
+		/*Thread.sleep(5000);
+		BrowserCode.Browser();
+*/		WishlistActions.wish();
 }
 }

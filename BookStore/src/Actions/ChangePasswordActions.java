@@ -34,9 +34,9 @@ public class ChangePasswordActions {
 		ChangePasswordInspectElements.email().sendKeys("gk030994@gmail.com");
 		     Thread.sleep(5000);
 		     ChangePasswordInspectElements.pass().sendKeys("1234");
-			 Thread.sleep(5000);*/
+			 Thread.sleep(5000);
 			 ChangePasswordInspectElements.clickonlogin().click();
-		     Thread.sleep(5000);
+		     Thread.sleep(5000);*/
 		     ChangePasswordInspectElements.change().click();
 		     ChangePasswordInspectElements.back().click();
 		     ChangePasswordInspectElements.change().click();
