@@ -10,14 +10,14 @@ import Objects.BrowserCode;
  * Verifying Continue Button
 *
 */
-public class ChangePasswordExecutions extends ChangePasswordActions {
+public class ChangePasswordExecutions  {
 	@Test
 	public void Signin() throws Exception
 	{
-/*	Thread.sleep(5000);
-	BrowserCode.Browser();*/
-	ChangePasswordExecutions obj = new ChangePasswordExecutions();
-	obj.password("C:\\Users\\cubic\\git\\BOOKSTORE_TASK12\\BookStore\\External Files\\Book1.xlsx", "Sheet2");
+	Thread.sleep(5000);
+	BrowserCode.Browser();
+	ChangePasswordActions.password("C:\\Users\\HP\\git\\BookStoreTask-_Finalcode\\BookStore\\External Files\\Book1.xlsx", "Sheet2");
+	
 	
 	}
 }

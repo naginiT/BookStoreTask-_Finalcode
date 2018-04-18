@@ -30,7 +30,10 @@ public class AddressActions extends ReturnCustomerActions {
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
 	static XSSFCell cell;
-	public void edit(String path, String value) throws Exception{
+	static	int j=1;
+	static  String s=null;
+	static  String s1=null;
+	public static void edit(String path, String value) throws Exception{
 		//login credintials read from excel
 		ReturnCustomerActions.exeec11();
 	
@@ -63,7 +66,7 @@ public class AddressActions extends ReturnCustomerActions {
 		 	
 		 	System.out.println("sheet.getLastRowNum()"+sheet.getLastRowNum());
 		 	try {
-			for(int j=1; j<=1; j++) {
+			
 				 AddressInspectElements.firstname().clear();
 				 AddressInspectElements.lastname().clear();
 				 AddressInspectElements.company().clear();
@@ -108,30 +111,30 @@ public class AddressActions extends ReturnCustomerActions {
 
 							 AddressInspectElements.cont().click();		//clicking on continue button
 							 
-							String s=AddressInspectElements.edit().getText();
-							/* 
-							 String s1="edit";
+							s=AddressInspectElements.edit().getText();
+							 System.out.println("Text is  "+s);
+							s1="edit";
 							 if(s.equalsIgnoreCase(s1)){
 							 	Thread.sleep(5000);
-							 sheet.getRow(j).createCell(3).setCellValue("pass");
-							 FileOutputStream fos= new FileOutputStream(f);
+							 sheet.getRow(j).createCell(10).setCellValue("pass");
+							 FileOutputStream fos= new FileOutputStream(f1);
 							 workbook.write(fos);
 
 							 }
 							 else {
-							 sheet.getRow(i).createCell(3).setCellValue("fail");
-							 FileOutputStream fos= new FileOutputStream(f);
+							 sheet.getRow(i).createCell(10).setCellValue("fail");
+							 FileOutputStream fos= new FileOutputStream(f1);
 							 workbook.write(fos);	
-							 }	 */
+							 }	 
 					
 							 
 							 
-	}
+	
 			Thread.sleep(5000);
 			AddressInspectElements.newaddress().click();
 			Thread.sleep(5000);
 			 AddressInspectElements.cont().click();
-			 for(int j=1; j<=1; j++) {
+		
 			 cell =sheet.getRow(j).getCell(1);
 			 AddressInspectElements.firstname().sendKeys(cell.getStringCellValue());
 				 cell =sheet.getRow(j).getCell(2);
@@ -160,10 +163,10 @@ public class AddressActions extends ReturnCustomerActions {
 						 //cell =sheet.getRow(j).getCell(9);
 						 Thread.sleep(5000);
 						 AddressInspectElements.region().selectByIndex(2);
-						 AddressInspectElements.defaultaddressno().click();
+						 AddressInspectElements.defaultaddressyes().click();
 						 AddressInspectElements.cont().click();		//clicking on continue button
 			AddressInspectElements.delete().click();
-}
+
 		 	}
 		 	finally {
 		 		System.out.println("sajd");

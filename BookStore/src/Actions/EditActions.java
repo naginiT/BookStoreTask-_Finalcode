@@ -1,6 +1,7 @@
 package Actions;
 
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -12,7 +13,9 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import Actions.ReturnCustomerActions;
+import Objects.BrowserCode;
 import Objects.EditInspectElements;
+import Values.BrowserCodeValues;
 /* author Gopi Kuncham 
  * Verifying Login Tab
  * Verifying Email Text Box
@@ -26,12 +29,10 @@ public class EditActions {
 	static XSSFWorkbook workbook;
 	static XSSFSheet sheet;
 	static XSSFCell cell;
-	String s=null;
-	String s1=null;
-	String er=null;
-	String ar=null;
+	static String s=null;
+	static String ar=null;
 	
-	public void edit(String path, String value) throws Exception{
+	public static void edit(String path, String value) throws Exception{
 		ReturnCustomerActions.exeec11();
 	
 		/*EditInspectElements.login().click();
@@ -96,17 +97,17 @@ public class EditActions {
 				
 					 
 				  try {
-				  s=EditInspectElements.cont().getAttribute("value");
+					 
+				    s=EditInspectElements.cont().getAttribute("value");
 				
 	                System.out.println("text is " +s);
-	                 s1="Continue"; 
-	                if(s.equalsIgnoreCase(s1)){
+	                 
+	                if(s.equalsIgnoreCase(BrowserCodeValues.s1)){
 	                	Thread.sleep(5000);
 	                	System.out.println("validate");
 	                sheet.getRow(j).createCell(6).setCellValue("pass");
 	                FileOutputStream fos= new FileOutputStream(f1);
 	                workbook.write(fos);
-	                System.out.println("for git");
 	                }
 	             
 	                EditInspectElements.back().click(); //clicking on back button  
@@ -114,8 +115,10 @@ public class EditActions {
 				  }
 				  
 				catch(Exception e){
-					System.out.println(s +s1);
-					if(s!=s1 && er.equalsIgnoreCase(ar)){
+					ar=BrowserCode.driver.findElement(By.xpath("//*[@id=\"page\"]/div[3]/div/div[1]")).getText();
+					System.out.println("ar" +ar);
+					
+					if( BrowserCodeValues.expectedresults.equalsIgnoreCase(ar) ){
 						
 						System.out.println("2 if");
 						sheet.getRow(j).createCell(6).setCellValue("pass");

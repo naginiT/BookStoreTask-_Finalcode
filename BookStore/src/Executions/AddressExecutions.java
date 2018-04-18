@@ -19,11 +19,9 @@ public class AddressExecutions extends AddressActions {
 	@Test
 	public void addressEx() throws Exception {
 		Thread.sleep(5000);
-		//BrowserCode.Browser();
+		BrowserCode.Browser();
+		AddressActions.edit("C:\\Users\\HP\\git\\BookStoreTask-_Finalcode\\BookStore\\External Files\\Book1.xlsx", "Sheet3");
 		
-		AddressExecutions obj=new AddressExecutions();
-	
-		obj.edit("C:\\Users\\cubic\\git\\BOOKSTORE_TASK12\\BookStore\\External Files\\Book1.xlsx", "Sheet3");
 }
 }
 

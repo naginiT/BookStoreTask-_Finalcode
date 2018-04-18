@@ -13,15 +13,13 @@ import Objects.BrowserCode;
  * Verifying Continue Button
 *
 */
-public class EditExecutions extends EditActions {
+public class EditExecutions {
 	@Test
 	public void Signin() throws Exception
 	{
 	Thread.sleep(5000);
 	BrowserCode.Browser();
-	EditExecutions obj = new EditExecutions();
-	obj.edit("C:\\Users\\cubic\\git\\BOOKSTORE_TASK12\\BookStore\\External Files\\Book1.xlsx","Sheet1");
-	
+	EditActions.edit("C:\\Users\\HP\\git\\BookStoreTask-_Finalcode\\BookStore\\External Files\\Book1.xlsx","Sheet1");
 	}
 }
  

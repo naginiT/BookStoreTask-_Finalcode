@@ -2,10 +2,12 @@ package Actions;
 
 import java.awt.Robot;
 import Objects.ReturnCustomer;
+import Values.BrowserCodeValues;
 import Actions.ReturnCustomerActions;
 import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -25,7 +27,11 @@ public class ChangePasswordActions {
 	static XSSFSheet sheet;
 	static XSSFSheet sheet1;
 	static XSSFCell cell;
-	public void password(String path, String value) throws Exception{
+	static String s=null;
+	static String s1=null;
+	static String s2=null;
+	//static String s3=null;
+	public  static void password(String path, String value) throws Exception{
 		ReturnCustomerActions.exeec11();
 	
 		/*ChangePasswordInspectElements.login().click();
@@ -72,8 +78,41 @@ public class ChangePasswordActions {
 				       else {
 				    	   ChangePasswordInspectElements.repassword().sendKeys(cell.getStringCellValue());
 				         }
+	
+			 EditInspectElements.cont().click();
+			 
+			  try {	
+				  s=EditInspectElements.cont().getAttribute("value");
+             System.out.println("text is " +s);
+             if(s.equalsIgnoreCase(BrowserCodeValues.s1)){
+             	Thread.sleep(5000);
+             	System.out.println("validate");
+             sheet.getRow(j).createCell(3).setCellValue("pass");
+             FileOutputStream fos= new FileOutputStream(f1);
+             workbook.write(fos);
+             }
+             }
+            		 catch(Exception e){
+            			 s2=ChangePasswordInspectElements.change().getText();
+                         System.out.println("text is " +s2);
+                          
+     					System.out.println(s +s1);
+     					if(s2.equalsIgnoreCase(BrowserCodeValues.s3)){
+     						
+     						sheet.getRow(j).createCell(3).setCellValue("pass");
+     		                FileOutputStream fos= new FileOutputStream(f1);
+     		                workbook.write(fos);
+     						
+     					}
+     					else {
+     					 sheet.getRow(j).createCell(3).setCellValue("fail");
+     		                System.out.println("invalidate");
+     		                FileOutputStream fos= new FileOutputStream(f1);
+     		                workbook.write(fos);
+     					System.out.println(e);
+     				}
+             }
+			}	
+
 	}
-			 EditInspectElements.cont().click();		
-			
-}
 }

@@ -10,7 +10,7 @@ public class BrowserCode {
 	public static  WebDriver driver;
 	public static void Browser()
 	{
-		System.setProperty("webdriver.chrome.driver","D:\\sarmila\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","D:\\gopikuncham\\Jarfiles\\chromedriver.exe");
 		ChromeOptions co =new ChromeOptions();
 		co.addArguments("Start-Maximized");
 		  driver= new ChromeDriver(co);

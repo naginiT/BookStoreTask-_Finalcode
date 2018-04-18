@@ -22,7 +22,7 @@ public class ReturnCustomerActions  {
 		{
 			//ReturnCustomer.login().click();
 			Thread.sleep(5000);
-		File f1= new File("C:\\Users\\cubic\\git\\BookStoreTask-_Finalcode1\\BookStore\\External Files\\Bookstore11.xlsx");
+		File f1= new File("C:\\Users\\HP\\git\\BookStoreTask-_Finalcode\\BookStore\\External Files\\Bookstore11.xlsx");
 		FileInputStream fis1 = new FileInputStream(f1);
 		work=new XSSFWorkbook(fis1);
 		sheet = work.getSheet("sheet1");
@@ -31,7 +31,7 @@ public class ReturnCustomerActions  {
 		
 		for(int i=1; i<=2;i++)
 		{	
-			BrowserCode.Browser();
+			//BrowserCode.Browser();
 			ReturnCustomer.login().click();
 			try {
 			cell=sheet.getRow(i).getCell(0);
@@ -100,7 +100,7 @@ public class ReturnCustomerActions  {
 			
 			
 		String s="pass";
-			sheet.getRow(i).createCell(5).setCellValue(s);
+			sheet.getRow(1).createCell(5).setCellValue(s);
 			FileOutputStream fos=new FileOutputStream(f1);
 			work.write(fos);
 			fos.close();
