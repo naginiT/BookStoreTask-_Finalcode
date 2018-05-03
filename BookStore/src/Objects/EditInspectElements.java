@@ -29,6 +29,7 @@ public class EditInspectElements extends BrowserCode {
 	public EditInspectElements(WebDriver driver)
 	{
 		super();
+		System.out.println();
 	}
 	//*[@id="content"]/form/div/div[2]/input
 	
